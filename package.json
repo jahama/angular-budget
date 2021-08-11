@@ -1,13 +1,24 @@
 {
   "name": "angular-budget",
-  "version": "0.0.0",
+  "version": "1.0.1",
+  "description": "Sample app for learning Angular testing.",
+  "author": {
+    "name": "Alberto Basalo",
+    "email": "albertobasalo@hotmail.com",
+    "url": "https://twitter.com/albertobasalo"
+  },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "eslint . --ext js,ts,json --quiet --fix"
+    "lint": "eslint . --ext js,ts,json --quiet --fix",
+    "prerelease": "standard-version ",
+    "release": "git push --follow-tags origin main",
+    "predeploy": "npm run release",
+    "deploy": "ng deploy --base-href=/angular-budget/"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +41,7 @@
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
@@ -41,6 +53,7 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "prettier": "^2.3.2",
     "prettier-eslint": "^13.0.0",
+    "standard-version": "^9.3.1",
     "typescript": "~4.3.5"
   }
 }
