@@ -6,5 +6,6 @@ npm i -D eslint @typescript-eslint/eslint-plugin
 npm i -D prettier eslint-plugin-prettier prettier-eslint eslint-config-prettier
 npm i -D standard-version
 ng add angular-cli-ghpages
-npm install rxjs@7
+npm i rxjs@7
+npm i bulma
 ```
