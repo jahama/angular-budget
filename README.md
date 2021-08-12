@@ -1,10 +1,12 @@
-# AngularBudget
+# [AngularBudget](https://angularbuilders.github.io/angular-budget/)
 
 ## Manage budgets for projects.
 
 ### Sample app for learning Angular testing
 
 This sample project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+
+[Read docs](https://github.com/angularbuilders/angular-budget/blob/main/docs/cli.md) to see how it was generated.
 
 Run `npm i` after clone or fork
 
