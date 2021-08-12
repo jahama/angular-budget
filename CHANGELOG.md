@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/angularbuilders/angular-budget/compare/v1.2.0...v1.3.0) (2021-08-12)
+
+
+### Features
+
+* app layout and page template with bulma ([5b6f272](https://github.com/angularbuilders/angular-budget/commit/5b6f272f37a503d1448079683db8447d94cf70cd))
+
 ## [1.2.0](https://github.com/angularbuilders/angular-budget/compare/v1.1.0...v1.2.0) (2021-08-11)
 
 
