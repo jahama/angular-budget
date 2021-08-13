@@ -1,0 +1,13 @@
+<article class=" card m-4">
+  <header class="card-header">
+    <h3 class="card-header-title is-size-4">{{ card.title }}</h3>
+  </header>
+  <main class="card-content">
+    <ng-content select="main"></ng-content>
+  </main>
+  <footer class="card-footer">
+    <a *ngFor="let action of card.actions"
+       [href]="action.link"
+       class="card-footer-item">{{ action.caption }}</a>
+  </footer>
+</article>

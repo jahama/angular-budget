@@ -1,0 +1,14 @@
+<h2 class="is-size-3">List of projects</h2>
+<section class="section columns is-multiline">
+  <ab-card *ngFor="let project of projects"
+           [card]="{title: project.name, actions:[{caption:'Edit', link:'#'},{caption:'Delete', link:'#'}]}"
+           class="column is-one-quarter-desktop is-half-tablet">
+    <main>
+      <p class="has-text-centered is-italic">{{ project.description }}</p>
+      <p>Start : {{ project.startDate | date }}</p>
+      <p>End :{{ project.endDate | date }}</p>
+      <p>Budget: {{ project.budget }}</p>
+      <p>Status: {{ project.status }}</p>
+    </main>
+  </ab-card>
+</section>

@@ -1,9 +1,11 @@
 <ab-page pageTitle="Projects home">
   <main>
     <pre>
-      <li>List of projects</li>
+      <li class="is-italic">List of projects</li>
       <li>Tasks summary (total/pending)</li>
       <li>Transactions summary (spending/earnings)</li>
     </pre>
+    <ab-projects *ngIf="projects$ | async as projects"
+                 [projects]="projects"></ab-projects>
   </main>
 </ab-page>

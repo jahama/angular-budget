@@ -18,4 +18,11 @@ ng g m domain/home --module=app --route=home --routing
 ng g m domain/login --module=app --route=login --routing
 ng g m shared/ui
 ng g c shared/ui/page --export=true
+
+ng g s domain/home/home
+ng g c domain/home/projects
+ng g m core/global
+ng g m shared/data
+ng g s shared/data/projects
+ng g c shared/ui/card --export=true
 ```
