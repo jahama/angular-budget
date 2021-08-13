@@ -5,10 +5,14 @@
            class="column is-one-quarter-desktop is-half-tablet">
     <main>
       <p class="has-text-centered is-italic">{{ project.description }}</p>
-      <p>Start : {{ project.startDate | date }}</p>
-      <p>End :{{ project.endDate | date }}</p>
-      <p>Budget: {{ project.budget }}</p>
-      <p>Status: {{ project.status }}</p>
+      <section>
+        <ab-tag [tag]="{ caption:'Starts', value:( project.startDate | date  ) || '' }"></ab-tag>
+        <ab-tag [tag]="{ caption:'Ends', value:( project.endDate | date  ) || '' }"
+                *ngIf="project.endDate"></ab-tag>
+        <ab-tag [tag]="{ caption:'Budget', value: (project.budget | number) || '' }"></ab-tag>
+        <ab-tag [tag]="{ caption:'Status', value: project.status , statusClass : (project.status | status)  }">
+        </ab-tag>
+      </section>
     </main>
   </ab-card>
 </section>

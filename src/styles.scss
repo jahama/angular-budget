@@ -24,6 +24,7 @@ $text: #3b4252;
 @import '../node_modules/bulma/sass/helpers/_all.sass';
 
 // Import especific parts of Bulma
+@import '../node_modules/bulma/sass/elements/tag.sass';
 @import '../node_modules/bulma/sass/elements/title.sass';
 @import '../node_modules/bulma/sass/components/card.sass';
 @import '../node_modules/bulma/sass/components/navbar.sass';
