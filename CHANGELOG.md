@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/angularbuilders/angular-budget/compare/v1.3.0...v1.4.0) (2021-08-13)
+
+
+### Features
+
+* list of projects on home page ([35ba536](https://github.com/angularbuilders/angular-budget/commit/35ba5364f06fa3a5ad7fb467f281194b1016a2a9)), closes [#1](https://github.com/angularbuilders/angular-budget/issues/1)
+* tags for dates, status and other values ([0f83653](https://github.com/angularbuilders/angular-budget/commit/0f83653411db2c95bdb0362a0e600bf63f451d21)), closes [#2](https://github.com/angularbuilders/angular-budget/issues/2)
+
 ## [1.3.0](https://github.com/angularbuilders/angular-budget/compare/v1.2.0...v1.3.0) (2021-08-12)
 
 
