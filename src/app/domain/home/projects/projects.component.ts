@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Project } from 'src/app/shared/data/models/project.model';
+import { ProjectView } from '../models/project-view.model';
 
 @Component({
   selector: 'ab-projects',
@@ -8,5 +8,5 @@ import { Project } from 'src/app/shared/data/models/project.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
-  @Input() projects: Project[] = [];
+  @Input() projects: ProjectView[] = [];
 }
