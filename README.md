@@ -14,32 +14,42 @@ Run `npm i` after clone or fork
 
 Run `npm start` for a dev server.
 
-Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io). **🚧 PENDING**
+
+Run `npm run lint` to fix or report lint failures
 
 Run `npm run release` to create a new release with semantic versions and a change file
 
-Run `npm run deply` to deploy to gitHub Pages
+Run `npm run deploy` to deploy to gitHub Pages
 
 ## Architecture
 
-Simple repository, organized in modules:
+Simple repository, organized in modules grouped in three main folders categories:
 
-- CoreModule: contains services with app wide related logic
-- SharedModule: components, directives and pipes to be shared in pages
-- Domain/: Modules for page components lazy loaded by routes
+### Core
+
+- _Global_ and _Layout_ Modules to contain services with app wide related logic
+
+### Shared
+
+- _Data, UI, Util_ modules to hold components, directives, pipes, services or logic to be shared in pages
+
+### Domain
+
+- _Feature_ modules for page components lazy loaded by routes
 
 ## Functionality
 
-Basic CRUD of projects.
+Basic CRUD for a list of projects. Each one with dates, status and budgeting control info.
 
-### To Be implemented
+### To Be extended
 
-To be done at the classroom or used like an exercise.
+> To be done at the classroom or used like an exercise by the student.
 
-- A project should have a list to tasks to be done.
+- A project should have a list of tasks to be done.
 - A project should have a list of economic transactions.
 
 ## Credits
 
-Created by [Alberto Basalo](https://twitter.com/albertobasalo) to be used a sample in his Angular Courses.
+Created by [Alberto Basalo](https://twitter.com/albertobasalo) to be used as a sample in his Angular Courses.
 Part of [Angular.builders](https://www.angular.builders)
