@@ -10,7 +10,7 @@ import { Task } from './models/task.model';
 export class TasksService {
   constructor(private http: HttpClient) {}
 
-  getTaksByProjectId$(projectId: string): Observable<Task[]> {
+  getTasksByProjectId$(projectId: string): Observable<Task[]> {
     return this.http
       .get<{ data: Task[] }>(`${environment.apiHost}projects/${projectId}/tasks`)
       .pipe(map(res => res.data));

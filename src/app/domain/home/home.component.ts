@@ -10,10 +10,10 @@ import { ProjectView } from './models/project-view.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  public projects$!: Observable<ProjectView[]>;
+  public projects$: Observable<ProjectView[]> = this.service.projectViews$;
   constructor(private service: HomeService) {}
 
   ngOnInit(): void {
-    this.projects$ = this.service.getProjects$();
+    this.service.loadProjectViews();
   }
 }
