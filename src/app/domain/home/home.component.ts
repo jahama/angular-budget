@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Project } from 'src/app/shared/data/models/project.model';
 import { HomeService } from './home.service';
+import { ProjectView } from './models/project-view.model';
 
 @Component({
   selector: 'ab-home',
@@ -10,10 +10,10 @@ import { HomeService } from './home.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  public projects$!: Observable<Project[]>;
+  public projects$: Observable<ProjectView[]> = this.service.projectViews$;
   constructor(private service: HomeService) {}
 
   ngOnInit(): void {
-    this.projects$ = this.service.getProjects$();
+    this.service.loadProjectViews();
   }
 }

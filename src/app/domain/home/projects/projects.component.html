@@ -12,6 +12,12 @@
         <ab-tag [tag]="{ caption:'Budget', value: (project.budget | number) || '' }"></ab-tag>
         <ab-tag [tag]="{ caption:'Status', value: project.status , statusClass : (project.status | status)  }">
         </ab-tag>
+        <ab-tag
+                [tag]="{ caption:'Pending Tasks', value: (project.pendingTasks | number) || '', statusClass:'is-danger' }">
+        </ab-tag>
+        <ab-tag
+                [tag]="{ caption:'Completed Tasks', value: (project.completedTasks | number) || '', statusClass:'is-success' }">
+        </ab-tag>
       </section>
     </main>
   </ab-card>
