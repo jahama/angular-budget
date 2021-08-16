@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/angularbuilders/angular-budget/compare/v1.4.0...v1.5.0) (2021-08-16)
+
+
+### Features
+
+* agreggated tasks by project - [#3](https://github.com/angularbuilders/angular-budget/issues/3) ([2520db2](https://github.com/angularbuilders/angular-budget/commit/2520db2f234129295e3d30b9d84a2371afb126e5))
+* show aggregated task data on projects [#3](https://github.com/angularbuilders/angular-budget/issues/3) ([06f6ee2](https://github.com/angularbuilders/angular-budget/commit/06f6ee2e475748e2558aee5439521da11bc8c62c))
+* show-tasks-on-home-page - Closes [#3](https://github.com/angularbuilders/angular-budget/issues/3) ([21b294d](https://github.com/angularbuilders/angular-budget/commit/21b294d8efcaff55b8019561814102c682a3f0bb))
+
 ## [1.4.0](https://github.com/angularbuilders/angular-budget/compare/v1.3.0...v1.4.0) (2021-08-13)
 
 
