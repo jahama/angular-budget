@@ -1,6 +1,6 @@
+import { UiModule } from '@ab/ui/ui.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { UiModule } from 'src/app/shared/ui/ui.module';
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
 

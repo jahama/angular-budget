@@ -1,5 +1,5 @@
+import { getClassForStatus } from '@ab/util/valueToCSS';
 import { Pipe, PipeTransform } from '@angular/core';
-import { getClassForStatus } from '../util/status';
 
 @Pipe({
   name: 'status',

@@ -1,16 +1,23 @@
+import { Project } from '@ab/data/models/project.model';
+import { Task } from '@ab/data/models/task.model';
+import { Store } from '@ab/util/store';
 import { Injectable } from '@angular/core';
-import { Project } from 'src/app/shared/data/models/project.model';
-import { Task } from 'src/app/shared/data/models/task.model';
-import { Store } from 'src/app/shared/util/store';
+import { Observable } from 'rxjs';
 import { HomeViewModel } from './models/home-view.model';
+import { ProjectView } from './models/project-view.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeStoreService extends Store<HomeViewModel> {
+  public projectViews$: Observable<ProjectView[]>;
+  public tasks$: Observable<Task[]>;
+
   constructor() {
     const initialState: HomeViewModel = { projects: [], tasks: [] };
     super(initialState);
+    this.projectViews$ = this.select$((state: HomeViewModel) => state.projects);
+    this.tasks$ = this.select$((state: HomeViewModel) => state.tasks);
   }
 
   addProjects(projects: Project[]): void {

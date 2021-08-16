@@ -1,6 +1,6 @@
+import { UiModule } from '@ab/ui/ui.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { UiModule } from 'src/app/shared/ui/ui.module';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 

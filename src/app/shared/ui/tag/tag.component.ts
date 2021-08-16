@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 
 export interface Tag {
   caption: string;
-  value: string;
+  value: unknown;
   statusClass?: string;
   units?: string;
 }

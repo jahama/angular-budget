@@ -1,38 +1,35 @@
+import { Task } from '@ab/data/models/task.model';
+import { ProjectsService } from '@ab/data/projects.service';
+import { TasksService } from '@ab/data/tasks.service';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { ProjectsService } from 'src/app/shared/data/projects.service';
-import { TasksService } from 'src/app/shared/data/tasks.service';
 import { HomeStoreService } from './home.store';
-import { HomeViewModel } from './models/home-view.model';
 import { ProjectView } from './models/project-view.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService {
-  public projectViews$: Observable<ProjectView[]>;
+  public projectViews$: Observable<ProjectView[]> = this.store.projectViews$;
+  public tasks$: Observable<Task[]> = this.store.tasks$;
 
   constructor(
     private projects: ProjectsService,
     private tasks: TasksService,
     private store: HomeStoreService
-  ) {
-    this.projectViews$ = this.store.select$<ProjectView[]>(
-      (state: HomeViewModel) => state.projects
-    );
-  }
+  ) {}
 
   public loadProjectViews(): void {
     this.projects
       .getProjects$()
       .pipe(
         tap(projects => this.store.addProjects(projects)),
-        tap(projects => projects.forEach(pvw => this.loadTasksByProjectId(pvw.id)))
+        tap(projects => projects.forEach(p => this.loadTasksByProjectId(p.id)))
       )
       .subscribe();
   }
 
-  loadTasksByProjectId(projectId: string): void {
+  private loadTasksByProjectId(projectId: string): void {
     this.tasks
       .getTasksByProjectId$(projectId)
       .pipe(

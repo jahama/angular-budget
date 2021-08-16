@@ -1,3 +1,4 @@
+import { Task } from '@ab/data/models/task.model';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HomeService } from './home.service';
@@ -11,6 +12,8 @@ import { ProjectView } from './models/project-view.model';
 })
 export class HomeComponent implements OnInit {
   public projects$: Observable<ProjectView[]> = this.service.projectViews$;
+  public tasks$: Observable<Task[]> = this.service.tasks$;
+
   constructor(private service: HomeService) {}
 
   ngOnInit(): void {

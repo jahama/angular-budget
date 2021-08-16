@@ -1,4 +1,4 @@
-import { Project } from 'src/app/shared/data/models/project.model';
+import { Project } from '@ab/data/models/project.model';
 
 export interface ProjectView extends Project {
   pendingTasks: number;

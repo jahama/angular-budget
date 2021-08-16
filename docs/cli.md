@@ -29,8 +29,12 @@ ng g c shared/ui/card --export=true
 ng g c shared/ui/tag --export=true
 ng g pipe shared/ui/status --export=true
 ng g m shared/util
+ng g class shared/util/valueToCSS
 
 ng g s shared/data/tasks
 ng g class shared/util/store
 ng g s domain/home/homeStore
+
+ng g pipe shared/ui/pending --export=true
+ng g pipe shared/ui/completed --export=true
 ```
