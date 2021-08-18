@@ -19,6 +19,7 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "@ab/data/*": ["./src/app/shared/data/*"],
+      "@ab/global/*": ["./src/app/core/global/*"],
       "@ab/ui/*": ["./src/app/shared/ui/*"],
       "@ab/util/*": ["./src/app/shared/util/*"]
     }

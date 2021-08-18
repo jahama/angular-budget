@@ -6,11 +6,14 @@
       <a [routerLink]="['/']"
          class="is-size-2 has-text-primary">Angular Budget</a>
     </span>
-    <span class="navbar-menu navbar-end ">
-      <a [routerLink]="['/about']"
-         class="navbar-item is-size-3 has-text-primary">About</a>
-      <a [routerLink]="['/login']"
-         class="navbar-item is-size-3 has-text-primary">Login</a>
+    <ab-notification class="navbar-item pt-0 pb-0 ml-4"></ab-notification>
+    <span class="navbar-menu">
+      <span class="navbar-end ">
+        <a [routerLink]="['/about']"
+           class="navbar-item is-size-3 has-text-primary">About</a>
+        <a [routerLink]="['/login']"
+           class="navbar-item is-size-3 has-text-primary">Login</a>
+      </span>
     </span>
   </nav>
 </header>

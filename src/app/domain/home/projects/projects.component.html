@@ -1,24 +1,31 @@
-<h2 class="is-size-3">List of projects</h2>
-<section class="section columns is-multiline">
-  <ab-card *ngFor="let project of projects"
-           [card]="{title: project.name, actions:[{caption:'Edit', link:'#'},{caption:'Delete', link:'#'}]}"
-           class="column is-one-quarter-desktop is-half-tablet">
-    <main>
-      <p class="has-text-centered is-italic">{{ project.description }}</p>
-      <section>
-        <ab-tag [tag]="{ caption:'Starts', value: project.startDate | date }"></ab-tag>
-        <ng-container *ngIf="project.endDate">
-          <ab-tag [tag]="{ caption:'Ends', value: project.endDate | date }"></ab-tag>
-        </ng-container>
-        <ab-tag [tag]="{ caption:'Budget', value: project.budget | number }"></ab-tag>
-        <ab-tag [tag]="{ caption:'Status', value: project.status , statusClass: project.status | status  }"></ab-tag>
-        <ab-tag
-                [tag]="{ caption:'Pending Tasks', value: project.pendingTasks , statusClass: project.pendingTasks | pending }">
-        </ab-tag>
-        <ab-tag
-                [tag]="{ caption:'Completed Tasks', value: project.completedTasks, statusClass: project.completedTasks | completed }">
-        </ab-tag>
-      </section>
-    </main>
-  </ab-card>
+<section *ngIf="projects && projects.length>0; else noDataYet">
+  <h2 class="title">List of projects</h2>
+  <p class="subtitle">Here we have {{projects.length}} projects</p>
+  <main class="columns is-multiline">
+    <ab-card *ngFor="let project of projects"
+             [card]="{title: project.name, actions:[{caption:'Edit', link:'#'},{caption:'Delete', link:'#'}]}"
+             class="column is-one-quarter-desktop is-half-tablet">
+      <main>
+        <p class="has-text-centered is-italic">{{ project.description }}</p>
+        <section>
+          <ab-tag [tag]="{ caption:'Starts', value: project.startDate | date }"></ab-tag>
+          <ng-container *ngIf="project.endDate">
+            <ab-tag [tag]="{ caption:'Ends', value: project.endDate | date }"></ab-tag>
+          </ng-container>
+          <ab-tag [tag]="{ caption:'Budget', value: project.budget | number }"></ab-tag>
+          <ab-tag [tag]="{ caption:'Status', value: project.status , statusClass: project.status | projectStatus  }">
+          </ab-tag>
+          <ab-tag
+                  [tag]="{ caption:'Pending Tasks', value: project.pendingTasks , statusClass: project.pendingTasks | pending }">
+          </ab-tag>
+          <ab-tag
+                  [tag]="{ caption:'Completed Tasks', value: project.completedTasks, statusClass: project.completedTasks | completed }">
+          </ab-tag>
+        </section>
+      </main>
+    </ab-card>
+  </main>
 </section>
+<ng-template #noDataYet>
+  <ab-no-data-yet></ab-no-data-yet>
+</ng-template>
