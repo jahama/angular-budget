@@ -45,4 +45,6 @@ ng g c core/layout/notification
 ng g interceptor core/global/error
 ng g s core/global/notificationStore
 ng g pipe core/global/notification/status
+
+
 ```
