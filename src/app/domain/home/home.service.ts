@@ -21,6 +21,12 @@ export class HomeService {
     private store: HomeStoreService
   ) {}
 
+  public addNewProject(): void {
+    this.projects
+      .postProject$({ id: '', name: '', startDate: new Date(), budget: 0, status: 'planned' })
+      .subscribe();
+  }
+
   public loadProjectViews(): void {
     this.store.setLoadingState(true);
     this.projects

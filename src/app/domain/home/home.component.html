@@ -2,7 +2,8 @@
   <main>
     <ng-container *ngIf="(loading$ | async) === false; else loading">
       <ng-container *ngIf="(error$ | async) === false; else error">
-        <ab-projects [projects]="projects$ | async"></ab-projects>
+        <ab-projects [projects]="projects$ | async"
+                     (addNewProject)="onAddNewProject()"></ab-projects>
       </ng-container>
     </ng-container>
     <ng-template #error>

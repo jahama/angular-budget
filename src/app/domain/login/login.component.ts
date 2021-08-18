@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { SecurityService } from '@ab/global/security.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'ab-login',
@@ -6,8 +7,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent implements OnInit {
-  constructor() {}
+export class LoginComponent {
+  constructor(private service: SecurityService) {}
 
-  ngOnInit(): void {}
+  public onLogin(): void {
+    this.service.loginWithCredentials({ email: 'admin@world.org', password: 'S3cr3t' });
+  }
 }

@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.service.loadProjectViews();
   }
+  onAddNewProject(): void {
+    // TODO: router redirect to new project page
+    this.service.addNewProject();
+  }
 }

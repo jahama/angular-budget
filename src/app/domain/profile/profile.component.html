@@ -1,0 +1,17 @@
+<ab-page pageTitle="Your profile">
+  <main>
+
+    <ab-card *ngIf="user$ | async as user"
+             [card]="{title:user.name, actions:[{caption:'log out'}]}">
+      <main>
+        {{user.email}}
+      </main>
+    </ab-card>
+    <button class="button is-primary"
+            (click)="onLogout()">log Out</button>
+    <pre>
+      <li>profile form</li>
+      <li>log out button</li>
+    </pre>
+  </main>
+</ab-page>
