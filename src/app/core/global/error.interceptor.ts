@@ -12,7 +12,7 @@ import { NotificationStore } from './notification.store';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private store: NotificationStore) {}
+  constructor(private notificationStore: NotificationStore) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     // To Do:
@@ -22,15 +22,18 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
-          this.store.showNotification('No authenticated', 'info');
+          this.notificationStore.showNotification('No authenticated', 'info');
         } else if (error.status >= 500) {
-          this.store.showNotification('Problems on our servers. Retry in a few minutes', 'danger');
+          this.notificationStore.showNotification(
+            'Problems on our servers. Retry in a few minutes',
+            'danger'
+          );
         } else if (error.status >= 400) {
-          this.store.showNotification('Review your data and retry', 'warning');
+          this.notificationStore.showNotification('Review your data and retry', 'warning');
         } else if (error.status === 0) {
-          this.store.showNotification('Server unreachable', 'danger');
+          this.notificationStore.showNotification('Server unreachable', 'danger');
         } else {
-          this.store.showNotification('Sorry app error', 'danger');
+          this.notificationStore.showNotification('Sorry app error', 'danger');
         }
         return throwError(() => error);
       })
