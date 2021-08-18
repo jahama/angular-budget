@@ -24,10 +24,14 @@ $text: #3b4252;
 @import '../node_modules/bulma/sass/helpers/_all.sass';
 
 // Import especific parts of Bulma
+@import '../node_modules/bulma/sass/elements/button.sass';
+@import '../node_modules/bulma/sass/elements/icon.sass';
 @import '../node_modules/bulma/sass/elements/tag.sass';
+@import '../node_modules/bulma/sass/elements/notification.sass';
 @import '../node_modules/bulma/sass/elements/title.sass';
 @import '../node_modules/bulma/sass/components/card.sass';
 @import '../node_modules/bulma/sass/components/navbar.sass';
+@import '../node_modules/bulma/sass/components/message.sass';
 @import '../node_modules/bulma/sass/grid/columns.sass';
 @import '../node_modules/bulma/sass/layout/hero.sass';
 @import '../node_modules/bulma/sass/layout/footer.sass';

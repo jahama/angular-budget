@@ -8,5 +8,5 @@ import { ProjectView } from '../models/project-view.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
-  @Input() projects: ProjectView[] = [];
+  @Input() projects: ProjectView[] | null = null;
 }
