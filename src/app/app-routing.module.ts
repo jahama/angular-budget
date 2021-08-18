@@ -15,6 +15,10 @@ const routes: Routes = [
     path: '*',
     redirectTo: '',
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./domain/profile/profile.module').then(m => m.ProfileModule),
+  },
 ];
 
 @NgModule({

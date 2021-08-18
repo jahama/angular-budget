@@ -17,6 +17,11 @@ export class HomeStoreService extends Store<HomeViewModel> {
   public setLoadingState(loading: boolean): void {
     const state = this.getState();
     state.loading = loading;
+    state.error = false;
+    if (loading) {
+      state.projects = [];
+      state.tasks = [];
+    }
     this.setState(state);
   }
 

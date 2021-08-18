@@ -1,0 +1,7 @@
+<a *ngIf="user$ | async as user; else login"
+   [routerLink]="['/profile']"
+   class="navbar-item is-size-3 has-text-primary">{{user.name}}</a>
+<ng-template #login>
+  <a [routerLink]="['/login']"
+     class="navbar-item is-size-3 has-text-primary">Login</a>
+</ng-template>

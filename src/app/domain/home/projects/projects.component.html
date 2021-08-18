@@ -1,6 +1,15 @@
 <section *ngIf="projects && projects.length>0; else noDataYet">
-  <h2 class="title">List of projects</h2>
-  <p class="subtitle">Here we have {{projects.length}} projects</p>
+  <header class="level">
+    <div class="level-left">
+      <div class="level-item">
+        <p class="title">List of {{projects.length}} projects</p>
+      </div>
+    </div>
+    <div class="level-right">
+      <button class="button level-item"
+              (click)="addNewProject.next()">Add new</button>
+    </div>
+  </header>
   <main class="columns is-multiline">
     <ab-card *ngFor="let project of projects"
              [card]="{title: project.name, actions:[{caption:'Edit', link:'#'},{caption:'Delete', link:'#'}]}"

@@ -10,6 +10,12 @@ import { Project } from './models/project.model';
 export class ProjectsService {
   constructor(private http: HttpClient) {}
 
+  postProject$(project: Project): Observable<Project> {
+    return this.http
+      .post<{ data: Project }>(environment.apiHost + 'projects', project)
+      .pipe(map(res => res.data));
+  }
+
   getProjects$(): Observable<Project[]> {
     return this.http
       .get<{ data: Project[] }>(environment.apiHost + 'projects')

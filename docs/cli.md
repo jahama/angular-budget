@@ -45,4 +45,11 @@ ng g c core/layout/notification
 ng g interceptor core/global/error
 ng g s core/global/notificationStore
 ng g pipe core/global/notification/status
+
+ng g s core/global/securityStore
+ng g s shared/data/users
+ng g c core/layout/user-login
+ng g m domain/profile --module=app --route=profile --routing
+ng g interceptor core/global/token
+ng g s core/global/security
 ```
