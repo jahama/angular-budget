@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/angularbuilders/angular-budget/compare/v1.5.1...v1.6.0) (2021-08-18)
+
+
+### Features
+
+* loading-status - Closes [#5](https://github.com/angularbuilders/angular-budget/issues/5) ([617c6fe](https://github.com/angularbuilders/angular-budget/commit/617c6fe6f7badae5404d122d07a976b67904332d))
+
 ### [1.5.1](https://github.com/angularbuilders/angular-budget/compare/v1.5.0...v1.5.1) (2021-08-17)
 
 ## [1.5.0](https://github.com/angularbuilders/angular-budget/compare/v1.4.0...v1.5.0) (2021-08-16)
