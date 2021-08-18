@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/angularbuilders/angular-budget/compare/v1.6.0...v1.7.0) (2021-08-18)
+
+
+### Features
+
+* Add-security-feature - Closes [#7](https://github.com/angularbuilders/angular-budget/issues/7) ([bb62b4c](https://github.com/angularbuilders/angular-budget/commit/bb62b4c75bbf9dd83c64a6a7e9551aed39db85b5))
+
 ## [1.6.0](https://github.com/angularbuilders/angular-budget/compare/v1.5.1...v1.6.0) (2021-08-18)
 
 
