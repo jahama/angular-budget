@@ -1,0 +1,17 @@
+<section class="field is-horizontal ">
+  <div class="field-label is-normal">
+    <label [for]="field.name"
+           class="label">{{field.label}}</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <ng-content select=".control"></ng-content>
+      <ng-container *ngIf="field.errors">
+        <p class="help is-danger">
+          <span *ngIf="field.errors.required">Required</span>
+          <span *ngIf="! field.errors.required"> {{ field.errorMessage || 'No valid' }} </span>
+        </p>
+      </ng-container>
+    </div>
+  </div>
+</section>

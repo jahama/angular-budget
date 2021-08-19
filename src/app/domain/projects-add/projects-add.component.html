@@ -1,0 +1,56 @@
+<ab-page pageTitle="Create your great new project">
+  <main>
+    <form [formGroup]="form"
+          (ngSubmit)="onSubmit()">
+      <fieldset class="mb-4 columns is-multiline">
+        <ab-form-field [field]="{name:'name', label:'Name', errors:form.controls['name'].errors}">
+          <input type="text"
+                 id="name"
+                 name="name"
+                 formControlName="name"
+                 class="control input">
+        </ab-form-field>
+        <ab-form-field [field]="{name:'budget', label:'Budget', errors:form.controls['budget'].errors}">
+          <input type="number"
+                 id="budget"
+                 name="budget"
+                 formControlName="budget"
+                 class="control input">
+        </ab-form-field>
+        <ab-form-field [field]="{name:'startDate', label:'Start Date', errors:form.controls['startDate'].errors}">
+          <input type="date"
+                 id="startDate"
+                 name="startDate"
+                 formControlName="startDate"
+                 class="control input">
+        </ab-form-field>
+        <ab-form-field [field]="{name:'endDate', label:'End Date', errors:form.controls['endDate'].errors}">
+          <input type="date"
+                 id="endDate"
+                 name="endDate"
+                 formControlName="endDate"
+                 class="control input">
+        </ab-form-field>
+        <ab-form-field [field]="{name:'description', label:'Description', errors:form.controls['description'].errors}">
+          <textarea type="text"
+                    id="description"
+                    name="description"
+                    formControlName="description"
+                    class="control textarea"></textarea>
+        </ab-form-field>
+      </fieldset>
+      <span class="field is-grouped is-grouped-right">
+        <span class="control">
+          <button type="reset"
+                  class="button is-light"
+                  (click)="form.reset()">Reset</button>
+        </span>
+        <span class="control">
+          <button type="submit"
+                  [disabled]="form.invalid"
+                  class="button is-primary">Save project</button>
+        </span>
+      </span>
+    </form>
+  </main>
+</ab-page>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ProjectView } from '../models/project-view.model';
 
 @Component({
@@ -9,5 +9,4 @@ import { ProjectView } from '../models/project-view.model';
 })
 export class ProjectsComponent {
   @Input() projects: ProjectView[] | null = null;
-  @Output() addNewProject: EventEmitter<void> = new EventEmitter<void>();
 }
