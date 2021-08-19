@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/angularbuilders/angular-budget/compare/v1.7.0...v1.8.0) (2021-08-19)
+
+
+### Features
+
+* login logout and auth token ([0c9836a](https://github.com/angularbuilders/angular-budget/commit/0c9836a0118258486426e93842c2a1f8a7eef396))
+
 ## [1.7.0](https://github.com/angularbuilders/angular-budget/compare/v1.6.0...v1.7.0) (2021-08-18)
 
 
