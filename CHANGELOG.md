@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/angularbuilders/angular-budget/compare/v1.8.1...v1.9.0) (2021-08-19)
+
+
+### Features
+
+* form-to-add-new-projects - Closes [#9](https://github.com/angularbuilders/angular-budget/issues/9) ([bd077ed](https://github.com/angularbuilders/angular-budget/commit/bd077ed7c1b103c6fd8e67058f42cf1d10cc6513))
+
 ### [1.8.1](https://github.com/angularbuilders/angular-budget/compare/v1.8.0...v1.8.1) (2021-08-19)
 
 ## [1.8.0](https://github.com/angularbuilders/angular-budget/compare/v1.7.0...v1.8.0) (2021-08-19)
