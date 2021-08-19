@@ -1,9 +1,8 @@
-<ab-page pageTitle="Budget dashboard">
+<ab-page pageTitle="Project Budget dashboard">
   <main>
     <ng-container *ngIf="(loading$ | async) === false; else loading">
       <ng-container *ngIf="(error$ | async) === false; else error">
-        <ab-projects [projects]="projects$ | async"
-                     (addNewProject)="onAddNewProject()"></ab-projects>
+        <ab-projects [projects]="projects$ | async"></ab-projects>
       </ng-container>
     </ng-container>
     <ng-template #error>
@@ -12,11 +11,5 @@
     <ng-template #loading>
       <ab-loading></ab-loading>
     </ng-template>
-    <hr>
-    <pre>
-      <p class="is-italic">To do...</p>
-      <li>Tasks summary (total/pending)</li>
-      <li>Transactions summary (spending/earnings)</li>
-    </pre>
   </main>
 </ab-page>

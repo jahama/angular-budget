@@ -8,7 +8,7 @@
   <footer class="card-footer">
     <ng-container *ngFor="let action of card.actions">
       <a *ngIf="action.link"
-         [href]="action.link"
+         [routerLink]="action.link"
          class="card-footer-item">{{ action.caption }}</a>
       <button *ngIf="action.command"
               class="card-footer-item button is-primary"
