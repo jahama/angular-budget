@@ -52,4 +52,10 @@ ng g c core/layout/user-login
 ng g m domain/profile --module=app --route=profile --routing
 ng g interceptor core/global/token
 ng g s core/global/security
+
+ng g m domain/projects-add --module=app --route=projects/add --routing
+ng g s domain/projects-add/projects-add
+ng g c shared/ui/form-field --export=true
+ng g m domain/projects-edit --module=app --route=projects/edit/:id --routing
+ng g s domain/projects-edit/projects-edit
 ```

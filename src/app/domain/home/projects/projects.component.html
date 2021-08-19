@@ -6,13 +6,13 @@
       </div>
     </div>
     <div class="level-right">
-      <button class="button level-item"
-              (click)="addNewProject.next()">Add new</button>
+      <a class="button level-item"
+         [routerLink]="['projects/add']">Add new</a>
     </div>
   </header>
   <main class="columns is-multiline">
     <ab-card *ngFor="let project of projects"
-             [card]="{title: project.name, actions:[{caption:'Edit', link:'#'},{caption:'Delete', link:'#'}]}"
+             [card]="{title: project.name, actions:[{caption:'Edit', link:'/projects/edit/'+project.id},{caption:'Delete', link:'#'}]}"
              class="column is-one-quarter-desktop is-half-tablet">
       <main>
         <p class="has-text-centered is-italic">{{ project.description }}</p>
@@ -22,7 +22,8 @@
             <ab-tag [tag]="{ caption:'Ends', value: project.endDate | date }"></ab-tag>
           </ng-container>
           <ab-tag [tag]="{ caption:'Budget', value: project.budget | number }"></ab-tag>
-          <ab-tag [tag]="{ caption:'Status', value: project.status , statusClass: project.status | projectStatus  }">
+          <ab-tag
+                  [tag]="{ caption:'Status', value: project.status | uppercase , statusClass: project.status | projectStatus  }">
           </ab-tag>
           <ab-tag
                   [tag]="{ caption:'Pending Tasks', value: project.pendingTasks , statusClass: project.pendingTasks | pending }">

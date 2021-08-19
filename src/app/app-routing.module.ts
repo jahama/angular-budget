@@ -19,6 +19,16 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./domain/profile/profile.module').then(m => m.ProfileModule),
   },
+  {
+    path: 'projects/add',
+    loadChildren: () =>
+      import('./domain/projects-add/projects-add.module').then(m => m.ProjectsAddModule),
+  },
+  {
+    path: 'projects/edit/:id',
+    loadChildren: () =>
+      import('./domain/projects-edit/projects-edit.module').then(m => m.ProjectsEditModule),
+  },
 ];
 
 @NgModule({
