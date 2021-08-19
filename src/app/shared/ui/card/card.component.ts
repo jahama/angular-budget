@@ -1,8 +1,21 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output
+} from '@angular/core';
+
+export interface UserAction {
+  caption: string;
+  link?: string;
+  command?: string;
+}
 
 export interface Card {
   title: string;
-  actions: { caption: string; link?: string }[];
+  actions: UserAction[];
 }
 
 @Component({
@@ -13,6 +26,7 @@ export interface Card {
 })
 export class CardComponent implements OnInit {
   @Input() card!: Card;
+  @Output() actionClick = new EventEmitter<UserAction>();
   constructor() {}
 
   ngOnInit(): void {}

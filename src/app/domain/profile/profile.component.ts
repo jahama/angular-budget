@@ -14,7 +14,7 @@ export class ProfileComponent {
 
   constructor(private service: SecurityService) {}
 
-  public onLogout(): void {
+  public onLogoutActionClick(): void {
     this.service.logout();
   }
 }

@@ -3,7 +3,7 @@ import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpRequest
+  HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
@@ -21,19 +21,18 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         if ([401, 403].includes(error.status)) {
-          this.notificationStore.showNotification('No authorized', 'warning');
+          this.notificationStore.showNotification('👮‍♀️ No authorized', 'warning');
           this.securityStore.setUnauthorized();
         } else if (error.status >= 500) {
-          this.notificationStore.showNotification(
-            'Problems on our servers. Retry in a few minutes',
-            'danger'
-          );
+          this.notificationStore.showNotification('👷‍♀️ Problem on server. Retry later', 'danger');
+        } else if (error.status === 404) {
+          this.notificationStore.showNotification('🤷‍♂️ Not found, review your data', 'warning');
         } else if (error.status >= 400) {
-          this.notificationStore.showNotification('Review your data and retry', 'warning');
+          this.notificationStore.showNotification('🕵️‍♂️ Review your data and retry', 'warning');
         } else if (error.status === 0) {
-          this.notificationStore.showNotification('Server unreachable', 'danger');
+          this.notificationStore.showNotification('🌌 Server unreachable', 'danger');
         } else {
-          this.notificationStore.showNotification('Sorry app error', 'danger');
+          this.notificationStore.showNotification('💥 Sorry app error', 'danger');
         }
         return throwError(() => error);
       })

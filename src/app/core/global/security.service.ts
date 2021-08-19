@@ -40,7 +40,7 @@ export class SecurityService {
       next: token => {
         const userId = this.getUserFromToken(token);
         this.securityStore.setLoggedIn(userId, token);
-        this.notificationStore.showNotification('Welcome', 'success');
+        this.notificationStore.showNotification(`Welcome ${userId}`, 'success');
         this.router.navigate(['/']);
       },
     });

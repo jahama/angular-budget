@@ -1,11 +1,64 @@
 <ab-page pageTitle="Login page">
   <main>
-    <button class="button is-primary"
-            (click)="onLogin()">log In</button>
-    <pre>
-      <li>Login form</li>
-      <li>Email/Password</li>
-      <li>Error info</li>
-    </pre>
+    <form [formGroup]="form"
+          (ngSubmit)="onLogin()"
+          class="">
+      <fieldset class="mb-4 columns ">
+        <div class="field is-horizontal column is-half">
+          <div class="field-label is-normal">
+            <label for="email"
+                   class="label">Email</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input type="email"
+                       id="email"
+                       name="email"
+                       formControlName="email"
+                       class="input">
+              </div>
+              <p *ngIf="form.controls['email'].invalid"
+                 class="help is-danger">
+                This field requires a valid email
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal column is-half">
+          <div class="field-label is-normal">
+            <label for="password"
+                   class="label">Password</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input type="password"
+                       id="password"
+                       name="password"
+                       formControlName="password"
+                       class="input">
+              </div>
+              <p *ngIf="form.controls['password'].invalid"
+                 class="help is-danger">
+                This field is required
+              </p>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <span class="field is-grouped is-grouped-right">
+        <span class="control">
+          <button type="reset"
+                  class="button is-light"
+                  (click)="form.reset()">Reset</button>
+        </span>
+        <span class="control">
+          <button type="submit"
+                  [disabled]="form.invalid"
+                  class="button is-primary">Log In</button>
+        </span>
+      </span>
+    </form>
   </main>
 </ab-page>

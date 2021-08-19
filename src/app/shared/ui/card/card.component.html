@@ -6,8 +6,13 @@
     <ng-content select="main"></ng-content>
   </main>
   <footer class="card-footer">
-    <a *ngFor="let action of card.actions"
-       [href]="action.link"
-       class="card-footer-item">{{ action.caption }}</a>
+    <ng-container *ngFor="let action of card.actions">
+      <a *ngIf="action.link"
+         [href]="action.link"
+         class="card-footer-item">{{ action.caption }}</a>
+      <button *ngIf="action.command"
+              class="card-footer-item button is-primary"
+              (click)="actionClick.next(action)">{{action.caption}}</button>
+    </ng-container>
   </footer>
 </article>
