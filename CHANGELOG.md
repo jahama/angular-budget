@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/angularbuilders/angular-budget/compare/v1.9.0...v1.10.0) (2021-08-20)
+
+
+### Features
+
+* delete-project-with-modal-for-confirmation - Closes [#11](https://github.com/angularbuilders/angular-budget/issues/11) ([554ad9b](https://github.com/angularbuilders/angular-budget/commit/554ad9b98f77a011ff6c63c0f0bb559e59319466))
+
 ## [1.9.0](https://github.com/angularbuilders/angular-budget/compare/v1.8.1...v1.9.0) (2021-08-19)
 
 
