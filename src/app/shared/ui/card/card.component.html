@@ -5,13 +5,13 @@
   <main class="card-content">
     <ng-content select="main"></ng-content>
   </main>
-  <footer class="card-footer">
+  <footer class="card-footer buttons are-medium">
     <ng-container *ngFor="let action of card.actions">
       <a *ngIf="action.link"
          [routerLink]="action.link"
-         class="card-footer-item">{{ action.caption }}</a>
+         class="card-footer-item button is-ghost ">{{ action.caption }}</a>
       <button *ngIf="action.command"
-              class="card-footer-item button is-primary"
+              class="card-footer-item button is-primary is-light"
               (click)="actionClick.next(action)">{{action.caption}}</button>
     </ng-container>
   </footer>

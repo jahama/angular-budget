@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.service.loadProjectViews();
   }
+
+  onDelete(projectId: string): void {
+    this.service.deleteProject(projectId);
+  }
 }

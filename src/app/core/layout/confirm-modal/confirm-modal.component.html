@@ -1,0 +1,23 @@
+<aside *ngIf="confirm$ | async as confirm">
+  <div class="modal"
+       [class.is-active]="confirm.show">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">{{ confirm.title }}</p>
+        <button class="delete"
+                aria-label="close"
+                (click)="onCancelClick()">✖</button>
+      </header>
+      <section class="modal-card-body">
+        {{ confirm.message }}
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success"
+                (click)="onConfirmClick()">{{ confirm.confirm }}</button>
+        <button class="button"
+                (click)="onCancelClick()">{{ confirm.cancel }}</button>
+      </footer>
+    </div>
+  </div>
+</aside>

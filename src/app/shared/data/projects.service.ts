@@ -33,4 +33,8 @@ export class ProjectsService {
       .put<{ data: Project }>(`${environment.apiHost}projects/${project.id}`, project)
       .pipe(map(res => res.data));
   }
+
+  deleteProject$(projectId: string): Observable<void> {
+    return this.http.delete<void>(`${environment.apiHost}projects/${projectId}`);
+  }
 }

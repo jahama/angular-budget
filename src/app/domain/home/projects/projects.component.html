@@ -12,7 +12,8 @@
   </header>
   <main class="columns is-multiline">
     <ab-card *ngFor="let project of projects"
-             [card]="{title: project.name, actions:[{caption:'Edit', link:'/projects/edit/'+project.id},{caption:'Delete', link:'#'}]}"
+             [card]="{title: project.name, actions:[{caption:'Edit', link:'/projects/edit/'+project.id},{caption:'Delete', command:'delete'}]}"
+             (actionClick)="delete.next(project.id)"
              class="column is-one-quarter-desktop is-half-tablet">
       <main>
         <p class="has-text-centered is-italic">{{ project.description }}</p>

@@ -1,6 +1,7 @@
 import { Task } from '@ab/data/models/task.model';
 import { ProjectsService } from '@ab/data/projects.service';
 import { TasksService } from '@ab/data/tasks.service';
+import { ConfirmStore } from '@ab/global/confirm.store';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { HomeStoreService } from './home.store';
@@ -18,7 +19,8 @@ export class HomeService {
   constructor(
     private projects: ProjectsService,
     private tasks: TasksService,
-    private store: HomeStoreService
+    private store: HomeStoreService,
+    private confirm: ConfirmStore
   ) {}
 
   public addNewProject(): void {
@@ -52,5 +54,20 @@ export class HomeService {
         tap(tasks => this.store.updateProjectTasks(projectId, tasks))
       )
       .subscribe();
+  }
+
+  public deleteProject(projectId: string): void {
+    this.confirm.showModal({
+      title: 'Delete Project',
+      message: 'Are you sure you want to delete this project?',
+    });
+    this.confirm.status$.subscribe(status => {
+      if (status === 'confirmed') {
+        this.projects
+          .deleteProject$(projectId)
+          .pipe(tap(() => this.loadProjectViews()))
+          .subscribe();
+      }
+    });
   }
 }

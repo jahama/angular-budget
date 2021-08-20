@@ -58,4 +58,6 @@ ng g s domain/projects-add/projects-add
 ng g c shared/ui/form-field --export=true
 ng g m domain/projects-edit --module=app --route=projects/edit/:id --routing
 ng g s domain/projects-edit/projects-edit
+ng g c core/layout/confirm-modal
+ng g s core/global/confirmStore
 ```
