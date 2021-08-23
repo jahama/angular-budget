@@ -2,6 +2,7 @@ import { Project } from '@ab/data/models/project.model';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
 import { ProjectsEditService } from './projects-edit.service';
 
 @Component({
@@ -13,6 +14,7 @@ import { ProjectsEditService } from './projects-edit.service';
 export class ProjectsEditComponent implements OnInit {
   public form!: FormGroup;
   public project!: Project;
+  public ready$!: Observable<boolean>;
   constructor(
     private fb: FormBuilder,
     private service: ProjectsEditService,
@@ -21,8 +23,8 @@ export class ProjectsEditComponent implements OnInit {
 
   ngOnInit(): void {
     const projectId = this.route.snapshot.params['id'];
-    this.service.getProjectById$(projectId).subscribe({
-      next: project => {
+    this.ready$ = this.service.getProjectById$(projectId).pipe(
+      map(project => {
         this.project = project;
         this.form = this.fb.group({
           name: new FormControl(project.name, [Validators.required]),
@@ -31,8 +33,9 @@ export class ProjectsEditComponent implements OnInit {
           endDate: new FormControl(project.endDate, []),
           description: new FormControl(project.description, []),
         });
-      },
-    });
+        return true;
+      })
+    );
   }
 
   public onSubmit(): void {

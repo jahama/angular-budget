@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { ConfirmStoreService } from './confirm.store';
 
-
 describe('ConfirmStoreService', () => {
   let service: ConfirmStoreService;
 

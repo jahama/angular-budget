@@ -1,7 +1,8 @@
 <ab-page pageTitle="Editing project">
   <main>
     <form [formGroup]="form"
-          (ngSubmit)="onSubmit()">
+          (ngSubmit)="onSubmit()"
+          *ngIf="ready$ | async">
       <fieldset class="mb-4 columns is-multiline">
         <ab-form-field [field]="{name:'name', label:'Name', errors:form.controls['name'].errors}">
           <input type="text"
