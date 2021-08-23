@@ -12,8 +12,8 @@ export class LoginComponent {
   public form: FormGroup;
   constructor(private fb: FormBuilder, private service: SecurityService) {
     this.form = this.fb.group({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
+      email: new FormControl('admin@world.org', [Validators.required, Validators.email]),
+      password: new FormControl('S3cr3t', [Validators.required]),
     });
   }
 

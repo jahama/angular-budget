@@ -22,7 +22,6 @@ export class SecurityService {
     securityStore
       .select$(s => s.unauthorized)
       .subscribe(unauthorized => {
-        console.log('unauthorized$', unauthorized);
         if (unauthorized) router.navigate(['/login']);
       });
     this.user$ = this.securityStore
