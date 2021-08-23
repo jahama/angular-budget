@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/angularbuilders/angular-budget/compare/v1.10.0...v1.10.1) (2021-08-23)
+
+
+### Bug Fixes
+
+* refactor project editor to propagate changes ([dab237b](https://github.com/angularbuilders/angular-budget/commit/dab237b6ced7ce61ff86c7b5b4c217bf9279026f))
+
 ## [1.10.0](https://github.com/angularbuilders/angular-budget/compare/v1.9.0...v1.10.0) (2021-08-20)
 
 
