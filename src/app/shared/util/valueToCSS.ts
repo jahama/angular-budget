@@ -7,7 +7,7 @@ export function getClassForProjectStatus(projectStatus: ProjectStatus): StatusCl
   ];
   return classes.find(c => projectStatus === c.projectStatus)?.class || 'is-info';
 }
-export function getClassForNotification(notification: NotificationStatus): StatusClass {
+export function getClassForNotificationStatus(notification: NotificationStatus): StatusClass {
   const classes: { class: StatusClass; notification: NotificationStatus }[] = [
     { class: 'is-warning', notification: 'warning' },
     { class: 'is-success', notification: 'success' },

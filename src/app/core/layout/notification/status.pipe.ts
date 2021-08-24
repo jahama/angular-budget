@@ -1,4 +1,8 @@
-import { getClassForNotification, NotificationStatus, StatusClass } from '@ab/util/valueToCSS';
+import {
+    getClassForNotificationStatus,
+    NotificationStatus,
+    StatusClass
+} from '@ab/util/valueToCSS';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -6,6 +10,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class StatusPipe implements PipeTransform {
   transform(value: NotificationStatus, ...args: unknown[]): StatusClass {
-    return getClassForNotification(value);
+    return getClassForNotificationStatus(value);
   }
 }
