@@ -2,7 +2,7 @@ import {
   getClassForCompletedCount,
   getClassForNotificationStatus,
   getClassForPendingCount,
-  getClassForProjectStatus
+  getClassForProjectStatus,
 } from './valueToCSS';
 
 fdescribe('Bulma class based completed tasks', () => {

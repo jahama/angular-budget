@@ -49,9 +49,17 @@ module.exports = function (config) {
 
     // 5 - Coverage
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-budget'),
+      dir: require('path').join(__dirname, './tests/coverage/angular-budget'),
       subdir: '.',
-      reporters: [{ type: 'html' }, { type: 'text-summary' }],
+      reporters: [ { type: 'html' }, { type: 'text-summary' } ],
+      check: {
+        global: {
+          statements: 75,
+          branches: 75,
+          functions: 75,
+          lines: 75,
+        },
+      },
     },
   });
 };

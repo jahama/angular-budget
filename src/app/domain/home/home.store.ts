@@ -2,6 +2,7 @@ import { Project } from '@ab/data/models/project.model';
 import { Task } from '@ab/data/models/task.model';
 import { Store } from '@ab/util/store';
 import { Injectable } from '@angular/core';
+import { updateProjectViewWithTasks } from './home.logic';
 import { HomeViewModel } from './models/home-view.model';
 import { ProjectView } from './models/project-view.model';
 
@@ -49,11 +50,11 @@ export class HomeStoreService extends Store<HomeViewModel> {
 
   public updateProjectTasks(projectId: string, tasks: Task[]): void {
     const state = this.getState();
-    const projectState = state.projects.find(p => p.id === projectId);
-    if (projectState) {
-      projectState.pendingTasks = tasks.filter(task => task.done === false).length;
-      projectState.completedTasks = tasks.filter(task => task.done === true).length;
+    let projectState = state.projects.find(p => p.id === projectId);
+    if (!projectState) {
+      return;
     }
+    projectState = updateProjectViewWithTasks(projectState, tasks);
     this.setState(state);
   }
 }
