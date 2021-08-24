@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { ConfirmStoreService } from './confirm.store';
+import { ConfirmStore } from './confirm.store';
 
 describe('ConfirmStoreService', () => {
-  let service: ConfirmStoreService;
+  let service: ConfirmStore;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ConfirmStoreService);
+    service = TestBed.inject(ConfirmStore);
   });
 
   it('should be created', () => {
