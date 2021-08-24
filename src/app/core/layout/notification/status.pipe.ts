@@ -1,7 +1,7 @@
 import {
-    getClassForNotificationStatus,
-    NotificationStatus,
-    StatusClass
+  getClassForNotificationStatus,
+  NotificationStatus,
+  StatusClass,
 } from '@ab/util/valueToCSS';
 import { Pipe, PipeTransform } from '@angular/core';
 

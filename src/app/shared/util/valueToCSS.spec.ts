@@ -21,20 +21,29 @@ fdescribe('Bulma class based completed tasks', () => {
 
 fdescribe('Bulma class based on pending tasks', () => {
   it('Should return "is-danger" class for 1 pending task', () => {
+    // Arrange
     const input = 1;
+    // Act
     const actual = getClassForPendingCount(input);
+    // Assert
     const expected = 'is-danger';
     expect(actual).toBe(expected);
   });
   it('Should return "is-info" class for 0 pending task', () => {
+    // Arrange
     const input = 0;
+    // Act
     const actual = getClassForPendingCount(input);
+    // Assert
     const expected = 'is-info';
     expect(actual).toBe(expected);
   });
   it('Should return "is-info" class for -1 pending task', () => {
+    // Arrange
     const input = -1;
+    // Act
     const actual = getClassForPendingCount(input);
+    // Assert
     const expected = 'is-info';
     expect(actual).toBe(expected);
   });

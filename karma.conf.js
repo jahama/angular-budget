@@ -3,39 +3,55 @@
 
 module.exports = function (config) {
   config.set({
-    basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+
+    // 0 - Pluggins
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
+      // require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma'),
+      require( '@angular-devkit/build-angular/plugins/karma' ),
+      require('karma-mocha-reporter')
     ],
+
+    // 1  - Trigger
+    autoWatch: true,
+    restartOnFileChange: true,
+    singleRun: false,
+
+    // 2 - Build
+    basePath: '',
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+
+    // 3 - Run
+    port: 9876,
+    // browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
+
+    // 4 - Report
+    colors: true,
+    logLevel: config.LOG_INFO,
+    // reporters: ['progress', 'kjhtml'],
+    reporters: ['mocha'],
+
+    mochaReporter: {
+      showDiff: false,
+      ignoreSkipped: true,
+    },
     client: {
       jasmine: {
-        // you can add configuration options for Jasmine here
-        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
-        // for example, you can disable the random execution with `random: false`
-        // or set a specific seed with `seed: 4321`
       },
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
     },
     jasmineHtmlReporter: {
       suppressAll: true, // removes the duplicated traces
     },
+
+    // 5 - Coverage
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/angular-budget'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
     },
-    reporters: ['progress', 'kjhtml'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true,
   });
 };
